@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f0ea;
+  --foreground: #161513;
+  --muted: #6d675f;
+  --border: #e0d9cf;
+  --accent: #8a5a38;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans), sans-serif;
+  --font-serif: var(--font-instrument-serif), "Times New Roman", serif;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+:focus-visible {
+  outline: 1px solid var(--foreground);
+  outline-offset: 3px;
+}
+
+.project-stage {
+  position: relative;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.project-panel {
+  position: absolute;
+  inset: 0;
+}
+
+.project-panel:not(:first-child) [data-project-visual],
+.project-panel:not(:first-child) [data-project-copy] {
+  opacity: 0;
+}
+
+.project-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  height: 2px;
+  background: color-mix(in srgb, var(--background) 28%, transparent);
+}
+
+.process-board [data-process-step] {
+  color: var(--muted);
+}
+
+.process-board [data-process-step].is-active {
+  color: var(--foreground);
+}
+
+.process-board [data-process-step].is-active p {
+  color: var(--accent);
+}
+
+@media (min-width: 1024px) {
+  .process-vertical {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) and (prefers-reduced-motion: reduce) {
+  .process-vertical {
+    display: block;
+  }
+
+  .process-horizontal {
+    display: none;
+  }
+}
+
+.project-progress-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-stage {
+    height: auto;
+    overflow: visible;
+  }
+
+  .project-panel {
+    position: relative;
+    min-height: 100svh;
+  }
+
+  .project-panel [data-project-visual],
+  .project-panel [data-project-copy] {
+    opacity: 1;
+  }
+
+  .project-progress {
+    display: none;
+  }
+}
