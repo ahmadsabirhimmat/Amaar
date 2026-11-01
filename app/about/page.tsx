@@ -5,7 +5,7 @@ import { AboutStory } from "@/components/sections/AboutStory";
 import { company } from "@/data/company";
 
 const description =
-  "Amaar develops residential, commercial, and mixed-use buildings across Afghanistan. The practice was founded by Javed Ishaq, with an office in Aino Mina, Kandahar.";
+  "Time Towers (ټايم ټاورز) is a residence and real estate address on 26th Street, 2nd Aino Mina, District 11, Kandahar. Time Tower Founder started the practice. The office is always open.";
 
 export const metadata: Metadata = {
   title: "About",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: "/images/hero.jpg",
         width: 2000,
         height: 1333,
-        alt: "A modern two-storey residence at dusk, with timber cladding, tall windows, and a lit living room.",
+        alt: "A Time Towers residence at dusk, with timber cladding, tall windows, and a lit living room.",
       },
     ],
   },

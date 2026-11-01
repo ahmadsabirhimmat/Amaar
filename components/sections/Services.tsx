@@ -75,13 +75,13 @@ export function Services() {
           ref={headingRef}
           className="mt-4 font-serif text-[clamp(3rem,6vw,5.4rem)] leading-[0.9] tracking-[-0.04em]"
         >
-          What the practice carries.
+          What Time Towers offers.
         </h2>
       </div>
 
       <div className="mt-16 lg:mt-24 lg:grid lg:grid-cols-12 lg:gap-x-16">
         <div className="lg:col-span-5 lg:col-start-8 lg:row-start-1">
-          <figure data-service-image className="relative aspect-[16/10] overflow-hidden lg:aspect-[4/5]">
+          <figure data-service-image className="relative aspect-[16/10] overflow-hidden shadow-[0_30px_70px_-42px_rgba(18,17,16,0.55)] lg:aspect-[4/5]">
             <Image
               key={active.image.src}
               src={active.image.src}
@@ -114,7 +114,9 @@ export function Services() {
                   id={`service-${service.id}`}
                   type="button"
                   aria-pressed={selected}
-                  className="flex w-full items-baseline gap-5 border-t border-border py-5 text-left focus-visible:outline-foreground md:gap-8 md:py-6"
+                  className={`flex w-full items-baseline gap-5 border-t border-border py-5 pr-3 pl-4 text-left transition-colors duration-300 focus-visible:outline-foreground md:gap-8 md:py-6 md:pr-4 md:pl-6 ${
+                    selected ? "bg-surface" : "hover:bg-surface/70"
+                  }`}
                   onMouseEnter={() => selectService(service.id)}
                   onFocus={() => selectService(service.id)}
                   onClick={() => selectService(service.id)}

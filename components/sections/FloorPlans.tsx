@@ -152,7 +152,7 @@ export function FloorPlans() {
           })}
         </div>
 
-        <div className="order-2 mt-8 border border-foreground lg:col-span-8 lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:mt-0">
+        <div className="order-2 mt-8 h-fit border border-border bg-surface shadow-[0_28px_70px_-46px_rgba(18,17,16,0.6)] lg:col-span-8 lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:self-start">
           <div id="floor-plan-sheet" role="tabpanel" aria-labelledby={`floor-tab-${active.id}`} className="max-w-full overflow-x-auto">
             <svg
               viewBox={PLAN_VIEWBOX}

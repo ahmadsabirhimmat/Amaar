@@ -178,7 +178,7 @@ export function Gallery() {
                 </span>
                 <span
                   data-gallery-caption
-                  className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/75 via-foreground/25 to-transparent px-4 pt-16 pb-4 text-background md:px-5 md:pb-5"
+                  className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent px-4 pt-16 pb-4 text-background backdrop-blur-[2px] md:px-5 md:pb-5"
                 >
                   <span className="block text-[0.68rem] tracking-[0.22em] uppercase">
                     {image.project}

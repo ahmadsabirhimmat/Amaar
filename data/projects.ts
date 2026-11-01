@@ -20,13 +20,13 @@ export type Project = {
 
 export const projects = [
   {
-    slug: "aino-house",
-    name: "Aino House",
-    location: "Aino Mina, Kandahar",
+    slug: "time-towers",
+    name: "Time Towers",
+    location: "2nd Aino Mina, Kandahar",
     year: 2024,
-    category: "Residential",
+    category: "Residence",
     description:
-      "A private house of dark metal and timber, with a sheltered entrance turned toward the evening light.",
+      "The Time Towers residence on 26th Street, District 11: dark metal and timber, with a sheltered entrance turned toward the evening light.",
     heroImage: {
       src: "/images/projects/01-exterior.jpg",
       alt: "A dusk view of a modern house with a dark metal upper floor, a warm timber wall, and a lit wooden door.",
@@ -45,11 +45,11 @@ export const projects = [
   {
     slug: "timber-court",
     name: "Timber Court",
-    location: "Aino Mina, Kandahar",
+    location: "2nd Aino Mina, Kandahar",
     year: 2023,
-    category: "Residential",
+    category: "Residence",
     description:
-      "A two-storey court house with a deep timber canopy, screened from the lane and open to the garden.",
+      "A Time Towers court house in Aino Mina, with a deep timber canopy, screened from the lane and open to the garden.",
     heroImage: {
       src: "/images/projects/01-court.jpg",
       alt: "A timber and glass house with a deep canopy, a black side wall, and a paved forecourt.",
@@ -66,13 +66,13 @@ export const projects = [
     floors: 2,
   },
   {
-    slug: "kabul-courts",
-    name: "Kabul Courts",
-    location: "Kabul",
+    slug: "time-towers-block",
+    name: "Time Towers Block",
+    location: "2nd Aino Mina, Kandahar",
     year: 2026,
-    category: "Mixed-use",
+    category: "Residence",
     description:
-      "Shops and showrooms at street level, with apartments stacked above in a long brick court.",
+      "Apartments at Time Towers in Aino Mina, stacked in a long brick court on 26th Street.",
     heroImage: {
       src: "/images/projects/03-block.jpg",
       alt: "A brick apartment building with dark cladding, glass balconies, and a band of warm interior light.",
@@ -91,11 +91,11 @@ export const projects = [
   {
     slug: "open-court",
     name: "Open Court",
-    location: "Aino Mina, Kandahar",
+    location: "2nd Aino Mina, Kandahar",
     year: 2025,
-    category: "Residential",
+    category: "Residence",
     description:
-      "A two-storey house opened to a private court, with deep shade under a timber soffit.",
+      "A Time Towers house in Aino Mina, opened to a private court, with deep shade under a timber soffit.",
     heroImage: {
       src: "/images/projects/04-house.jpg",
       alt: "A white two-storey house with a timber ceiling, full-height glass, and a still pool in the court.",

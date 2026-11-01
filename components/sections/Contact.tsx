@@ -96,20 +96,20 @@ export function Contact() {
         </div>
 
         <div className="relative z-10 w-full px-6 pt-32 pb-12 md:px-12 md:pb-16">
-          <h2 className="max-w-[12ch] font-serif text-[clamp(3.6rem,11vw,8.4rem)] leading-[0.86] tracking-[-0.045em]">
+          <h2 className="max-w-[14ch] font-serif text-[clamp(3.6rem,11vw,8.4rem)] leading-[0.86] tracking-[-0.045em]">
             <span className="block overflow-hidden">
               <span data-contact-line className="block pb-[0.06em]">
-                Let&apos;s build
+                Come and see
               </span>
             </span>
             <span className="block overflow-hidden">
               <span data-contact-line className="block pb-[0.06em]">
-                something
+                the residences
               </span>
             </span>
             <span className="block overflow-hidden">
               <span data-contact-line className="block pb-[0.08em] italic">
-                that lasts.
+                in Aino Mina.
               </span>
             </span>
           </h2>
@@ -117,13 +117,15 @@ export function Contact() {
           <div data-contact-meta className="mt-12 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
             <dl className="grid gap-x-12 gap-y-6 sm:grid-cols-2">
               <div>
-                <dt className="text-[0.68rem] tracking-[0.22em] text-background/60 uppercase">Email</dt>
+                <dt className="text-[0.68rem] tracking-[0.22em] text-background/60 uppercase">Website</dt>
                 <dd className="mt-2">
                   <a
                     className="text-sm hover:text-accent focus-visible:outline-background"
-                    href={company.contact.emailHref}
+                    href={company.links.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    {company.contact.email}
+                    {company.links.websiteLabel}
                   </a>
                 </dd>
               </div>
@@ -170,27 +172,19 @@ export function Contact() {
                   >
                     Facebook
                   </a>
-                  <a
-                    className="hover:text-accent focus-visible:outline-background"
-                    href={company.links.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Website
-                  </a>
                 </dd>
               </div>
             </dl>
 
             <div className="flex flex-wrap gap-4">
               <a
-                className="inline-flex border border-background/70 px-5 py-3 text-[0.68rem] tracking-[0.22em] uppercase hover:bg-background hover:text-foreground focus-visible:outline-background"
-                href={company.contact.emailHref}
+                className="inline-flex rounded-full bg-background px-5 py-3 text-[0.68rem] tracking-[0.18em] text-foreground uppercase transition-colors hover:bg-accent hover:text-background focus-visible:outline-background"
+                href={company.contact.mobileHref}
               >
                 Contact
               </a>
               <a
-                className="inline-flex border border-background px-5 py-3 text-[0.68rem] tracking-[0.22em] uppercase hover:bg-background hover:text-foreground focus-visible:outline-background"
+                className="inline-flex rounded-full border border-background/70 px-5 py-3 text-[0.68rem] tracking-[0.18em] uppercase transition-colors hover:bg-background hover:text-foreground focus-visible:outline-background"
                 href="#inquiry"
               >
                 Project inquiry
@@ -229,7 +223,7 @@ export function Contact() {
                     name="projectType"
                     required
                     defaultValue=""
-                    className="mt-3 w-full border-0 border-b border-foreground/30 bg-transparent py-3 text-lg focus-visible:border-foreground focus-visible:outline-foreground"
+                    className="mt-3 w-full border-0 border-b border-foreground/20 bg-transparent py-3 text-lg transition-colors focus-visible:border-accent focus-visible:outline-foreground"
                   >
                     <option value="" disabled>
                       Select
@@ -248,13 +242,13 @@ export function Contact() {
                     name="message"
                     required
                     rows={5}
-                    className="mt-3 w-full resize-y border-0 border-b border-foreground/30 bg-transparent py-3 text-lg focus-visible:border-foreground focus-visible:outline-foreground"
+                    className="mt-3 w-full resize-y border-0 border-b border-foreground/20 bg-transparent py-3 text-lg transition-colors focus-visible:border-accent focus-visible:outline-foreground"
                   />
                 </label>
                 <div className="md:col-span-2">
                   <button
                     type="submit"
-                    className="border border-foreground px-6 py-3 text-[0.68rem] tracking-[0.22em] uppercase hover:bg-foreground hover:text-background focus-visible:outline-foreground"
+                    className="rounded-full bg-foreground px-6 py-3 text-[0.68rem] tracking-[0.18em] text-background uppercase transition-colors hover:bg-accent focus-visible:outline-foreground"
                   >
                     Send inquiry
                   </button>
@@ -290,7 +284,7 @@ function Field({
         type={type}
         autoComplete={autoComplete}
         required={required}
-        className="mt-3 w-full border-0 border-b border-foreground/30 bg-transparent py-3 text-lg focus-visible:border-foreground focus-visible:outline-foreground"
+        className="mt-3 w-full border-0 border-b border-foreground/20 bg-transparent py-3 text-lg transition-colors focus-visible:border-accent focus-visible:outline-foreground"
       />
     </label>
   );

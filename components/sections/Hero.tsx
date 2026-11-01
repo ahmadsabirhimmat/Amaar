@@ -95,7 +95,7 @@ export function Hero() {
         <div ref={mediaRef} className="absolute inset-[-6%] origin-center">
           <Image
             src="/images/hero.jpg"
-            alt="A modern two-storey residence at dusk, with timber cladding, tall windows, and a lit living room beside a lawn and a large tree."
+            alt="A Time Towers residence at dusk, with timber cladding, tall windows, and a lit living room beside a lawn and a large tree."
             fill
             preload
             sizes="100vw"
@@ -104,24 +104,25 @@ export function Hero() {
         </div>
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(22,21,19,0.5)_0%,rgba(22,21,19,0.08)_32%,rgba(22,21,19,0.22)_58%,rgba(22,21,19,0.68)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,17,16,0.55)_0%,rgba(18,17,16,0.08)_34%,rgba(18,17,16,0.18)_62%,rgba(18,17,16,0.78)_100%)]"
         />
       </div>
 
       <div className="relative z-10 w-full px-6 pt-24 pb-5 md:px-12 md:pt-32 md:pb-12">
-        <p data-hero-kicker className="text-[0.68rem] tracking-[0.32em] text-background/80 uppercase">
+        <p data-hero-kicker className="flex items-center gap-3 text-[0.68rem] tracking-[0.32em] text-background/80 uppercase">
+          <span aria-hidden="true" className="h-px w-8 bg-accent" />
           {company.category}
         </p>
 
-        <h1 className="mt-6 font-serif text-[clamp(2.7rem,12vw,7.8rem)] leading-[0.88] tracking-[-0.04em]">
-          <span className="block overflow-hidden">
+        <h1 className="mt-6 flex flex-nowrap items-baseline gap-x-[0.18em] font-serif text-[clamp(2.15rem,7.4vw,6.6rem)] leading-none tracking-[-0.045em]">
+          <span className="overflow-hidden">
             <span data-hero-line className="block pb-[0.08em]">
-              Shaped for
+              Time
             </span>
           </span>
-          <span className="block overflow-hidden">
+          <span className="overflow-hidden">
             <span data-hero-line className="block pb-[0.1em] italic">
-              Afghanistan.
+              Towers.
             </span>
           </span>
         </h1>
@@ -130,22 +131,22 @@ export function Hero() {
           {company.summary}
         </p>
 
-        <div className="mt-8 flex flex-col gap-8 md:mt-12 md:flex-row md:items-end md:justify-between">
-          <dl data-hero-meta className="flex flex-wrap gap-x-10 gap-y-4">
+        <div className="mt-8 flex flex-col gap-6 md:mt-12 md:flex-row md:items-end md:justify-between">
+          <dl data-hero-meta className="flex flex-wrap gap-x-10 gap-y-4 border border-background/15 bg-foreground/30 px-5 py-4 backdrop-blur-md">
             <div>
-              <dt className="text-[0.65rem] tracking-[0.24em] text-background/65 uppercase">Office</dt>
+              <dt className="text-[0.65rem] tracking-[0.24em] text-background/60 uppercase">Office</dt>
               <dd className="mt-2 text-sm">{formatLocation("short")}</dd>
             </div>
             <div>
-              <dt className="text-[0.65rem] tracking-[0.24em] text-background/65 uppercase">Practice</dt>
-              <dd className="mt-2 text-sm">Residential and mixed-use</dd>
+              <dt className="text-[0.65rem] tracking-[0.24em] text-background/60 uppercase">Listed as</dt>
+              <dd className="mt-2 text-sm">Residence</dd>
             </div>
           </dl>
 
           <a
             data-hero-cta
             href={contactAction.href}
-            className="inline-flex w-fit items-center gap-3 border border-background/70 px-5 py-3 text-[0.68rem] tracking-[0.22em] uppercase focus-visible:outline-background hover:bg-background hover:text-foreground"
+            className="inline-flex w-fit items-center gap-3 rounded-full bg-background px-5 py-3 text-[0.68rem] tracking-[0.18em] text-foreground uppercase transition-colors duration-500 hover:bg-accent hover:text-background focus-visible:outline-background"
           >
             Start a conversation
             <ArrowUpRight aria-hidden="true" className="size-4" strokeWidth={1.25} />

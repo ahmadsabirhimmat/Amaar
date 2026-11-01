@@ -5,22 +5,15 @@ type LogoProps = {
   className?: string;
 };
 
-export function Logo({ className = "h-10 w-[2.9rem]" }: LogoProps) {
+export function Logo({ className = "" }: LogoProps) {
   return (
     <Link
       href="/"
       aria-label={`${company.name}, home`}
-      className={`inline-block shrink-0 bg-current focus-visible:outline-current ${className}`}
-      style={{
-        maskImage: "url(/images/amaar-logo.png)",
-        WebkitMaskImage: "url(/images/amaar-logo.png)",
-        maskRepeat: "no-repeat",
-        WebkitMaskRepeat: "no-repeat",
-        maskPosition: "center",
-        WebkitMaskPosition: "center",
-        maskSize: "contain",
-        WebkitMaskSize: "contain",
-      }}
-    />
+      className={`inline-flex shrink-0 flex-col leading-none focus-visible:outline-current ${className}`}
+    >
+      <span className="font-serif text-[1.45rem] tracking-[-0.04em]">{company.name}</span>
+      <span className="mt-1.5 text-[0.68rem] leading-none opacity-70">{company.localName}</span>
+    </Link>
   );
 }

@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { practice, statistics } from "@/data/practice";
 import { gsap, motion, useGSAP } from "@/lib/gsap";
 import { revealWords } from "@/lib/motion";
@@ -71,30 +72,6 @@ export function About() {
           },
         });
 
-        stats.querySelectorAll<HTMLElement>("[data-stat]").forEach((element, index) => {
-          const value = Number(element.dataset.value ?? 0);
-          const suffix = element.dataset.suffix ?? "";
-          const counter = { value: 0 };
-
-          element.textContent = `0${suffix}`;
-
-          gsap.to(counter, {
-            value,
-            duration: 1.8,
-            delay: index * 0.1,
-            ease: "power2.out",
-            snap: { value: 1 },
-            scrollTrigger: {
-              trigger: stats,
-              start: "top 82%",
-              once: true,
-            },
-            onUpdate: () => {
-              element.textContent = `${counter.value}${suffix}`;
-            },
-          });
-        });
-
         return () => split?.revert();
       });
     },
@@ -126,9 +103,10 @@ export function About() {
             <p className="mt-6 leading-relaxed text-muted">{practice.philosophy}</p>
             <Link
               href="/about"
-              className="mt-10 inline-block text-[0.68rem] tracking-[0.22em] uppercase hover:text-accent focus-visible:outline-foreground"
+              className="mt-10 inline-flex items-center gap-2 text-[0.68rem] tracking-[0.18em] uppercase transition-colors hover:text-accent focus-visible:outline-foreground"
             >
               About us
+              <ArrowUpRight aria-hidden="true" className="size-4" strokeWidth={1.25} />
             </Link>
           </div>
         </div>
@@ -136,7 +114,7 @@ export function About() {
         <figure
           data-about-reveal
           data-about-figure
-          className="relative mt-14 aspect-[4/5] overflow-hidden lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:mt-32"
+          className="relative mt-14 aspect-[4/5] overflow-hidden shadow-[0_30px_70px_-40px_rgba(18,17,16,0.55)] lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:mt-1"
         >
           <Image
             src={practice.image.src}
@@ -153,18 +131,13 @@ export function About() {
 
       <dl
         data-stats
-        className="mt-24 grid grid-cols-2 gap-x-8 gap-y-16 border-t border-border pt-12 md:mt-36 md:gap-x-12 md:pt-16 lg:grid-cols-4"
+        className="mt-16 grid grid-cols-2 gap-x-8 gap-y-8 border-t border-border pt-8 md:mt-24 md:grid-cols-4 md:pt-10"
       >
         {statistics.map((stat) => (
-          <div key={stat.label} data-stat-block className="flex flex-col-reverse">
-            <dt className="mt-4 max-w-[11rem] text-[0.68rem] tracking-[0.22em] text-muted uppercase">
-              {stat.label}
-            </dt>
-            <dd className="font-serif text-[clamp(3.4rem,7vw,5.5rem)] leading-none tracking-[-0.045em]">
-              <span data-stat data-value={stat.value} data-suffix={stat.suffix}>
-                {stat.value}
-                {stat.suffix}
-              </span>
+          <div key={stat.label} data-stat-block className="border-l border-accent/70 pl-4">
+            <dt className="text-[0.68rem] tracking-[0.22em] text-muted uppercase">{stat.label}</dt>
+            <dd className="mt-3 font-serif text-[clamp(1.45rem,2.2vw,2rem)] leading-none tracking-[-0.03em]">
+              {stat.value}
             </dd>
           </div>
         ))}

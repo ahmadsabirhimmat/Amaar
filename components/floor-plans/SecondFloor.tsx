@@ -1,5 +1,5 @@
 /**
- * Placeholder second-floor plan for Aino House.
+ * Placeholder second-floor plan for Time Towers.
  * Replace this group with the client SVG.
  * Put structural lines on data-plan-wall and labels on data-plan-detail.
  */

@@ -67,7 +67,7 @@ export function AboutStory() {
 
       <div className="mt-14 md:mt-20 lg:grid lg:grid-cols-12 lg:gap-x-16">
         <figure className="lg:col-span-5">
-          <div data-about-page-figure className="relative aspect-[4/5] overflow-hidden">
+          <div data-about-page-figure className="relative aspect-[4/5] overflow-hidden shadow-[0_30px_70px_-40px_rgba(18,17,16,0.55)]">
             <Image
               src={aboutPage.founder.src}
               alt={aboutPage.founder.alt}
@@ -75,7 +75,7 @@ export function AboutStory() {
               sizes="(min-width: 1024px) 38vw, 100vw"
               quality={75}
               loading="eager"
-              className="object-cover object-[center_22%]"
+              className="object-cover object-[center_72%]"
             />
           </div>
           <figcaption data-about-page-reveal className="mt-6">
@@ -115,8 +115,13 @@ export function AboutStory() {
             <a className="hover:text-accent focus-visible:outline-foreground" href={company.contact.mobileHref}>
               {company.contact.mobile}
             </a>
-            <a className="hover:text-accent focus-visible:outline-foreground" href={company.contact.emailHref}>
-              {company.contact.email}
+            <a
+              className="hover:text-accent focus-visible:outline-foreground"
+              href={company.links.website}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {company.links.websiteLabel}
             </a>
           </div>
 

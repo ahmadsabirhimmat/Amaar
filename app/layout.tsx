@@ -18,17 +18,19 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
+const defaultTitle = `${company.name} — Residences in Aino Mina, Kandahar`;
+
 const ogImage = {
   url: "/images/hero.jpg",
   width: 2000,
   height: 1333,
-  alt: "A modern two-storey residence at dusk, with timber cladding, tall windows, and a lit living room.",
+  alt: "A Time Towers residence at dusk, with timber cladding, tall windows, and a lit living room.",
 } as const;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Amaar — Real estate development across Afghanistan",
+    default: defaultTitle,
     template: `%s — ${company.name}`,
   },
   description: siteDescription,
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Amaar — Real estate development across Afghanistan",
+    title: defaultTitle,
     description: siteDescription,
     url: "/",
     siteName: company.name,
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amaar — Real estate development across Afghanistan",
+    title: defaultTitle,
     description: siteDescription,
     images: [ogImage.url],
   },

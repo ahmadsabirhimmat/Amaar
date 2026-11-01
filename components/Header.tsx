@@ -170,15 +170,15 @@ export function Header() {
       </a>
 
       <div
-        className={`relative z-50 flex items-center justify-between px-6 py-5 motion-reduce:transition-none transition-[background-color,color,border-color] duration-700 md:px-12 ${
+        className={`relative z-50 grid grid-cols-[1fr_auto] items-center px-6 py-4 motion-reduce:transition-none transition-[background-color,color,border-color,box-shadow] duration-700 md:grid-cols-[1fr_auto_1fr] md:px-12 ${
           solid
-            ? "border-b border-border bg-background text-foreground"
+            ? "border-b border-border/80 bg-background/80 text-foreground shadow-[0_10px_40px_-28px_rgba(18,17,16,0.45)] backdrop-blur-xl"
             : "border-b border-transparent bg-transparent text-background"
         }`}
       >
         <Logo />
 
-        <nav className="absolute left-1/2 hidden -translate-x-1/2 md:block" aria-label="Primary">
+        <nav className="hidden justify-self-center md:block" aria-label="Primary">
           <ul className="flex items-center gap-5 xl:gap-8">
             {primaryNavigation.map((item) => (
               <li key={item.href}>
@@ -195,10 +195,14 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center justify-end gap-6">
           <Link
             href={contactAction.href}
-            className="hidden text-xs tracking-[0.22em] uppercase transition-opacity duration-500 hover:opacity-60 focus-visible:outline-current md:inline"
+            className={`hidden rounded-full border px-4 py-2 text-[0.68rem] tracking-[0.18em] uppercase transition-colors duration-500 focus-visible:outline-current md:inline-flex ${
+              solid
+                ? "border-foreground/15 hover:bg-foreground hover:text-background"
+                : "border-background/35 hover:bg-background hover:text-foreground"
+            }`}
           >
             {contactAction.label}
           </Link>

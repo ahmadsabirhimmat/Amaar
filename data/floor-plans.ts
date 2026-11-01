@@ -19,8 +19,8 @@ export type FloorPlan = {
 };
 
 export const floorPlanProject = {
-  name: "Aino House",
-  location: "Aino Mina, Kandahar",
+  name: "Time Towers",
+  location: "2nd Aino Mina, Kandahar",
   scale: "1:100",
 } as const;
 
